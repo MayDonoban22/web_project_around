@@ -23,7 +23,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: justify;
   height: 77px;
 }
 
@@ -33,8 +32,10 @@
   margin: 0 auto;
   text-overflow: ellipsis;
   overflow: hidden;
-  max-width: 290px;
+  max-width: 300px;
   width: 100%;
+  white-space: nowrap;
+  text-align: left;
 }
 
 .content__profession {
@@ -45,8 +46,10 @@
   font-weight: lighter;
   text-overflow: ellipsis;
   overflow: hidden;
-  max-width: 290px;
+  max-width: 300px;
   width: 100%;
+  white-space: nowrap;
+  text-align: left;
 }
 
 .content__edit-button {
