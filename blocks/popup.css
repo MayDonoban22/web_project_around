@@ -57,6 +57,8 @@
 .popup__title {
   font-size: 18px;
   color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .popup__item {

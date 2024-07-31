@@ -23,15 +23,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: start;
+  text-align: justify;
   height: 77px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .content__name {
   font-size: 38px;
   line-height: 56px;
   margin: 0 auto;
-  text-overflow: ellipsis;
 }
 
 .content__profession {
@@ -125,7 +126,7 @@
   cursor: url("../images/Layer\ 1\ 3.png"), auto;
 }
 
-.content__info-like:focus {
+.content__description-like:focus {
   width: 21px;
   height: 19px;
   border: none;
@@ -133,7 +134,7 @@
   cursor: url("../images/Layer\ 1\ 3.png"), auto;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #000;
+  background-color: #fff;
 }
 
 .content__description-like:hover {
