@@ -25,14 +25,16 @@
   justify-content: space-between;
   text-align: justify;
   height: 77px;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .content__name {
   font-size: 38px;
   line-height: 56px;
   margin: 0 auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 290px;
+  width: 100%;
 }
 
 .content__profession {
@@ -41,6 +43,10 @@
   margin: 0;
   padding-top: 2px;
   font-weight: lighter;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 290px;
+  width: 100%;
 }
 
 .content__edit-button {
