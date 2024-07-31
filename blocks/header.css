@@ -1,0 +1,45 @@
+.header {
+  width: 880px;
+  max-width: 100%;
+}
+.header__logo {
+  display: flex;
+  align-items: flex-start;
+  letter-spacing: 1.5px;
+  font-weight: normal;
+  margin: 0;
+  padding-top: 45px;
+  height: 74px;
+  font-size: 33px;
+}
+
+.header__logo-vector {
+  font-size: 8px;
+}
+
+.header__line {
+  background-color: #545454;
+  opacity: 70%;
+  height: 1px;
+}
+
+.content__element-picture {
+  width: 282px;
+  height: 282px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+@media screen and (max-width: 880px) {
+  .header__logo {
+    margin-left: 27px;
+    margin-right: 167px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header__logo {
+    margin-left: 27px;
+    margin-right: 167px;
+  }
+}
