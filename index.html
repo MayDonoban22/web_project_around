@@ -49,74 +49,33 @@
           </form>
           <div class="popup__overlay"></div>
         </div>
+        <div class="popup__plus">
+          <button class="form__close"></button>
+          <form class="form__edit-profile">
+            <h2 class="form__title">Nuevo Lugar</h2>
+            <input type="text" placeholder="Titulo" class="form__item" />
+            <input type="text" placeholder="imagen  URL" class="form__item" />
+            <button class="form__update">Guardar</button>
+          </form>
+          <div class="form__overlay"></div>
+        </div>
+        <div class="popup" id="popup-image">
+          <div class="popup__container">
+            <button class="popup__close"></button>
+            <img src="" alt="" class="popup__picture-src" />
+            <h3 class="popup__picture-title"></h3>
+          </div>
+          <div class="popup__overlay"></div>
+        </div>
+
         <section class="content__elements">
-          <div class="content__element">
-            <img
-              src="./images/villa-de-leyva.jpg"
-              alt="villa_de_leyva"
-              class="content__element-picture"
-            />
+          <div class="content__element content__element-template">
+            <img src="" alt="pasto" class="content__element-picture" />
             <div class="content__description">
-              <p class="content__description-text">Villa de Leyva, Boyacá</p>
+              <p class="content__description-text"></p>
               <button class="content__description-like"></button>
             </div>
-          </div>
-          <div class="content__element">
-            <img
-              src="./images/cartagena.jpg"
-              alt="cartagena"
-              class="content__element-picture"
-            />
-            <div class="content__description">
-              <p class="content__description-text">Cartagena, Bolívar</p>
-              <button class="content__description-like"></button>
-            </div>
-          </div>
-          <div class="content__element">
-            <img
-              src="./images/medellin.jpeg"
-              alt="medellin"
-              class="content__element-picture"
-            />
-            <div class="content__description">
-              <p class="content__description-text">Medellin, Antioquia</p>
-              <button class="content__description-like"></button>
-            </div>
-          </div>
-          <div class="content__element">
-            <img
-              src="./images/Santa-rosa.jpg"
-              alt="santa_rosa_cabal"
-              class="content__element-picture"
-            />
-            <div class="content__description">
-              <p class="content__description-text">
-                Santa Rosa de Cabal, Risaralda
-              </p>
-              <button class="content__description-like"></button>
-            </div>
-          </div>
-          <div class="content__element">
-            <img
-              src="./images/cali.jpg"
-              alt="cali"
-              class="content__element-picture"
-            />
-            <div class="content__description">
-              <p class="content__description-text">Cali, Valle del Cauca</p>
-              <button class="content__description-like"></button>
-            </div>
-          </div>
-          <div class="content__element">
-            <img
-              src="./images/pasto.jpg"
-              alt="pasto"
-              class="content__element-picture"
-            />
-            <div class="content__description">
-              <p class="content__description-text">Pasto, Nariño</p>
-              <button class="content__description-like"></button>
-            </div>
+            <button class="content__bin"></button>
           </div>
         </section>
       </main>

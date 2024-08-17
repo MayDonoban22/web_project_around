@@ -36,6 +36,9 @@
   white-space: nowrap;
   text-align: left;
 }
+.content__element-template {
+  display: none;
+}
 
 .content__profession {
   display: inline-block;
@@ -134,7 +137,7 @@
   cursor: url("../images/Layer\ 1\ 3.png"), auto;
 }
 
-.content__description-like:focus {
+.content__description-like-focus {
   width: 21px;
   height: 19px;
   border: none;
@@ -146,6 +149,23 @@
 }
 
 .content__description-like:hover {
+  opacity: 0.5;
+}
+.content__bin {
+  border: none;
+  background-image: url("../images/Delete.svg");
+  cursor: url("../images/Layer\ 1\ 3.png"), auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #00ff0000;
+  width: 19px;
+  height: 19px;
+  position: relative;
+  bottom: 348px;
+  left: 120px;
+}
+
+.content__bin:hover {
   opacity: 0.5;
 }
 
