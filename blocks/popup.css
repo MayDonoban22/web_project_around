@@ -60,9 +60,6 @@
 .popup__picture-src {
   max-width: 75vw;
   max-height: 75vh;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .popup__picture-title {
