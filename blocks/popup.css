@@ -33,6 +33,13 @@
   background-color: #545454;
 }
 
+.popup__update-disabled {
+  border: 1px solid #000000;
+  background-color: #f1f1f1;
+  cursor: default;
+  color: #000000;
+  opacity: 0.2;
+}
 .popup__close {
   width: 41px;
   height: 41px;
@@ -106,6 +113,14 @@
   top: 0;
   left: 0;
   z-index: -1;
+}
+.popup__input_type_error {
+  border: 1px solid red;
+}
+.popup__input-error {
+  color: red;
+  font-size: 12px;
+  width: 370px;
 }
 
 @media screen and (max-width: 880px) {

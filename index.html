@@ -39,25 +39,60 @@
             <button class="content__plus-button"></button>
           </div>
         </section>
-        <div class="popup">
-          <button class="popup__close"></button>
-          <form class="popup__edit-profile">
+        <div class="popup" id="popup-profile">
+          <form class="popup__form popup__edit-profile" id="form-profile">
+            <button class="popup__close"></button>
             <h2 class="popup__title">Editar Perfil</h2>
-            <input type="text" placeholder="Nombre" class="popup__item" />
-            <input type="text" placeholder="Acerca de mi" class="popup__item" />
-            <button class="popup__update">Guardar</button>
+            <input
+              type="text"
+              name="name"
+              id="input-name"
+              minlength="2"
+              maxlength="40"
+              placeholder="Nombre"
+              class="popup__item"
+            />
+            <span class="popup__input-error input-name-error"></span>
+            <input
+              type="text"
+              name="about"
+              id="input-about"
+              minlength="2"
+              maxlength="200"
+              placeholder="Acerca de mi"
+              class="popup__item"
+            />
+            <span class="popup__input-error input-about-error"></span>
+            <button class="popup__update" id="btn">Guardar</button>
           </form>
           <div class="popup__overlay"></div>
         </div>
-        <div class="popup__plus">
-          <button class="form__close"></button>
-          <form class="form__edit-profile">
+        <div class="popup__plus" id="popup-place">
+          <form class="popup__form form__edit-profile" id="form-place">
+            <button class="form__close"></button>
             <h2 class="form__title">Nuevo Lugar</h2>
-            <input type="text" placeholder="Titulo" class="form__item" />
-            <input type="text" placeholder="imagen  URL" class="form__item" />
-            <button class="form__update">Guardar</button>
+            <input
+              type="text"
+              name="title"
+              minlength="2"
+              maxlength="40"
+              id="input-card-title"
+              placeholder="Titulo"
+              class="popup__item"
+            />
+            <span class="popup__input-error input-card-title-error"></span>
+            <input
+              type="url"
+              name="link"
+              required
+              id="input-card-link"
+              placeholder="imagen  URL"
+              class="popup__item"
+            />
+            <span class="popup__input-error input-card-link-error"></span>
+            <button class="form__update popup__update">Guardar</button>
           </form>
-          <div class="form__overlay"></div>
+          <div class="popup__overlay"></div>
         </div>
         <div class="popup" id="popup-image">
           <div class="popup__container">
@@ -69,7 +104,10 @@
         </div>
 
         <section class="content__elements">
-          <div class="content__element content__element-template">
+          <div
+            class="content__element content__element-template"
+            id="card-element"
+          >
             <img src="" alt="pasto" class="content__element-picture" />
             <div class="content__description">
               <p class="content__description-text"></p>
@@ -84,5 +122,6 @@
       </footer>
     </div>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
