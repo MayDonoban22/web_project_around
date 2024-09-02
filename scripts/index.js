@@ -1,3 +1,4 @@
+import { resetValidation, settings } from "./validate.js";
 const popup = document.querySelector(".popup");
 
 const editButton = document.querySelector(".content__edit-button");
@@ -24,6 +25,7 @@ const closeButton = document.querySelector(".popup__close");
 
 closeButton.addEventListener("click", function () {
   popup.classList.remove("popup_show");
+  resetValidation(settings);
 });
 
 let formInput = document.querySelector(".popup__edit-profile");
@@ -41,6 +43,7 @@ plusButton.addEventListener("click", function () {
 
 closeFormButton.addEventListener("click", function () {
   popupPlus.classList.remove("form__show");
+  resetValidation(settings);
 });
 formButton.addEventListener("click", function (evt) {
   evt.preventDefault();

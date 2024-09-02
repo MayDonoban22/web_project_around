@@ -26,11 +26,6 @@ const form = document.querySelector("#form-profile");
 const formPlace = document.querySelector("#form-place");
 const btn = document.querySelector("#btn");
 
-function hasInvalidInput(inputList) {
-  return inputList.some((inputElement) => {
-    return !inputElement.validity.valid;
-  });
-}
 function toggleButtonState(inputList, formButton) {
   if (!hasInvalidInput(inputList)) {
     formButton.removeAttribute("disabled");
@@ -73,11 +68,32 @@ function hasInvalidInput(inputList) {
   });
 }
 
-enableValidation({
+const settings = {
   formSelector: ".popup__form",
   inputSelector: ".popup__item",
   submitButtonSelector: ".popup__update",
   inactiveButtonClass: "popup__update_disabled",
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__error_visible",
-});
+};
+
+enableValidation(settings);
+
+const resetValidation = (settings) => {
+  const formReset = Array.from(
+    document.querySelectorAll(settings.formSelector)
+  );
+  formReset.forEach((formElement) => {
+    formElement.reset();
+    const inputList = Array.from(
+      formElement.querySelectorAll(settings.inputSelector)
+    );
+    const formButton = formElement.querySelector(".popup__update");
+    toggleButtonState(inputList, formButton);
+    inputList.forEach((inputElement) => {
+      hideInputError(formElement, inputElement, settings);
+    });
+  });
+};
+
+export { resetValidation, settings };
