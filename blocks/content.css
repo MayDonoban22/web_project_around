@@ -36,9 +36,8 @@
   white-space: nowrap;
   text-align: left;
 }
-.content__element-template {
-  display: none;
-}
+/* .content__element-template {
+} */
 
 .content__profession {
   display: inline-block;

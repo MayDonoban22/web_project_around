@@ -107,23 +107,27 @@
         </div>
 
         <section class="content__elements">
-          <div
-            class="content__element content__element-template"
-            id="card-element"
-          >
-            <img src="" alt="pasto" class="content__element-picture" />
-            <div class="content__description">
-              <p class="content__description-text"></p>
-              <button class="content__description-like"></button>
+          <template>
+            <div
+              class="content__element content__element-template"
+              id="card-element"
+            >
+              <img src="" alt="Places" class="content__element-picture" />
+              <div class="content__description">
+                <p class="content__description-text"></p>
+                <button class="content__description-like"></button>
+              </div>
+              <button class="content__bin"></button>
             </div>
-            <button class="content__bin"></button>
-          </div>
+          </template>
         </section>
       </main>
+
       <footer class="footer">
         <p class="footer__copyright">&copy; 2024. May Donoban Espitia Pineda</p>
       </footer>
     </div>
     <script src="./scripts/index.js" type="module"></script>
+    <script src="./scripts/utils.js" type="module"></script>
   </body>
 </html>
