@@ -17,22 +17,21 @@ export default class FormValidator {
     inputElement.classList.remove(this.settings.inputErrorClass);
     errorElement.textContent = "";
   }
-  checkInputValidity(inputElement) {
+  _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
       this.showInputError(inputElement, inputElement.validationMessage);
     } else {
       this.hideInputError(inputElement);
     }
   }
-  toggleButtonState() {}
-  setEventListeners() {
+
+  _setEventListeners() {
     this.inputList = Array.from(
       this.formElement.querySelectorAll(this.settings.inputSelector)
     );
     this.inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
-        this.checkInputValidity(inputElement);
-        this.toggleButtonState(inputElement);
+        this._checkInputValidity(inputElement);
       });
     });
   }
@@ -41,7 +40,7 @@ export default class FormValidator {
     this.formElement.addEventListener("submit", function (evt) {
       evt.preventDefault();
     });
-    this.setEventListeners();
+    this._setEventListeners();
   }
   hasInvalidInput() {
     return this.inputList.some((inputElement) => {

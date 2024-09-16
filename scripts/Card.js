@@ -1,35 +1,35 @@
 export default class Card {
-  constructor(title, image, handleCardClick) {
+  constructor(title, image, handleCardClick, templateSelector) {
     this._title = title;
     this._image = image;
     this._handleCardClick = handleCardClick;
+    this.templateSelector = templateSelector;
   }
-  _getTemplate() {
-    return document
-      .querySelector("template")
-      .content.querySelector(".content__element")
+  #getTemplate() {
+    return this.templateSelector.content
+      .querySelector(".content__element")
       .cloneNode(true);
   }
-  likeCard() {
+  #likeCard() {
     this.likeIcon.classList.toggle("content__description-like-focus");
   }
-  removeCard() {
+  #removeCard() {
     this.cardElement.remove();
   }
 
-  setEventListeners() {
+  #setEventListeners() {
     this.trashIcon.addEventListener("click", () => {
-      this.removeCard();
+      this.#removeCard();
     });
     this.likeIcon.addEventListener("click", () => {
-      this.likeCard();
+      this.#likeCard();
     });
     this.cardImage.addEventListener("click", () => {
       this._handleCardClick(this._title, this._image);
     });
   }
-  setProperties() {
-    this.cardElement = this._getTemplate();
+  #setProperties() {
+    this.cardElement = this.#getTemplate();
     this.cardImage = this.cardElement.querySelector(
       ".content__element-picture"
     );
@@ -45,8 +45,8 @@ export default class Card {
   }
 
   createCard() {
-    this.setProperties();
-    this.setEventListeners();
+    this.#setProperties();
+    this.#setEventListeners();
     return this.cardElement;
   }
 }

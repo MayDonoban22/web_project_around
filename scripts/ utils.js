@@ -1,4 +1,3 @@
-// import { resetValidation, settings } from "./validate.js";
 const popup = document.querySelector(".popup");
 const profession = document.querySelector(".content__profession");
 const name = document.querySelector(".content__name");

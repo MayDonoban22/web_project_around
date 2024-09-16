@@ -1,41 +1,8 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import { form, formPlace } from "./ utils.js";
-// import { resetValidation } from "./validate.js";
 
-// const popup = document.querySelector(".popup");
-
-// const editButton = document.querySelector(".content__edit-button"); //#1
-// const name = document.querySelector(".content__name");
-// const profession = document.querySelector(".content__profession");
-// const updateButton = document.querySelector(".popup__update"); //#2
-// editButton.addEventListener("click", function () {
-//   popup.classList.add("popup_show");
-
-//   let inputList = popup.querySelectorAll("input");
-//   inputList[0].value = name.textContent;
-//   inputList[1].value = profession.textContent;
-// });
-
-// updateButton.addEventListener("click", function (event) {
-//   event.preventDefault();
-//   let inputList = popup.querySelectorAll("input");
-//   name.textContent = inputList[0].value;
-//   profession.textContent = inputList[1].value;
-//   popup.classList.remove("popup_show");
-// });
-
-// const closeButton = document.querySelector(".popup__close"); //#3
-
-// closeButton.addEventListener("click", function () {
-//   popup.classList.remove("popup_show");
-//   resetValidation(settings);
-// });
-
-// let formInput = document.querySelector(".popup__edit-profile");
-
-// function updateDetails() {}
-
+const templateSelector = document.querySelector("template");
 const popupPlus = document.querySelector(".popup__plus");
 
 const plusButton = document.querySelector(".content__plus-button");
@@ -51,9 +18,15 @@ closeFormButton.addEventListener("click", function () {
 formButton.addEventListener("click", function (evt) {
   evt.preventDefault();
   let inputList = popupPlus.querySelectorAll("input");
-  const card = new Card(inputList[0].value, inputList[1].value, openPopupImage);
+  const card = new Card(
+    inputList[0].value,
+    inputList[1].value,
+    openPopupImage,
+    templateSelector
+  );
   console.log(card);
   cardContainer.prepend(card.createCard());
+  popupPlus.classList.remove("form__show");
 });
 
 const initialCards = [
@@ -85,7 +58,7 @@ const initialCards = [
 
 const cardContainer = document.querySelector(".content__elements");
 initialCards.forEach(({ link, name }) => {
-  const card = new Card(name, link, openPopupImage);
+  const card = new Card(name, link, openPopupImage, templateSelector);
   console.log(card);
   cardContainer.prepend(card.createCard());
 });
@@ -131,7 +104,7 @@ document.addEventListener("keydown", (evt) => {
   closeCard(evt);
 });
 
-const overlay = document.querySelectorAll(".popup__overlay"); //#9
+const overlay = document.querySelectorAll(".popup__overlay");
 overlay.forEach((item) => {
   item.addEventListener("click", () => {
     const form = document.querySelector("#popup-profile");
