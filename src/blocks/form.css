@@ -1,24 +1,15 @@
-.popup {
+.popup__plus {
   display: none;
   position: fixed;
   top: 25%;
   left: 35%;
-  z-index: 400;
 }
 
-.popup_show {
-  display: flex;
-}
-#popup-image {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
+.form__show {
+  display: block;
 }
 
-.popup__update {
+.form__update {
   border: 1px solid #fff;
   background-color: #000;
   border-radius: 3px;
@@ -27,53 +18,31 @@
   height: 50px;
   font-family: "Inter";
   font-size: 18px;
-  cursor: url("../images/Layer\ 1\ 3.png"), auto;
+  cursor: url("../../images/hand.png"), auto;
 }
-.popup__update:hover {
+.form__update:hover {
   background-color: #545454;
 }
 
-.popup__update-disabled {
-  border: 1px solid #000000;
-  background-color: #f1f1f1;
-  cursor: default;
-  color: #000000;
-  opacity: 0.2;
-}
-.popup__close {
+.form__close {
   width: 41px;
   height: 41px;
   position: absolute;
   top: -33px;
   right: -33px;
-  background-image: url("../images/Close\ Icon.png");
+  background-image: url("../../images/Close-icon.png");
   background-color: transparent;
   background-repeat: no-repeat;
-  cursor: url("../images/Layer\ 1\ 3.png"), auto;
+  cursor: url("../../images/hand.png"), auto;
   border: none;
   z-index: 1;
 }
 
-.popup__close:hover {
+.form__close:hover {
   opacity: 0.5;
 }
 
-.popup__container {
-  display: block;
-  position: relative;
-  min-width: 300px;
-}
-
-.popup__picture-src {
-  max-width: 75vw;
-  max-height: 75vh;
-}
-
-.popup__picture-title {
-  color: #fff;
-}
-
-.popup__edit-profile {
+.form__edit-profile {
   border: 1px solid white;
   background-color: #fff;
   border-radius: 10px;
@@ -85,14 +54,14 @@
   align-items: center;
 }
 
-.popup__title {
+.form__title {
   font-size: 18px;
   color: #000;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.popup__item {
+.form__item {
   width: 358px;
   display: flex;
   flex-direction: column;
@@ -105,7 +74,7 @@
   border-bottom: 1px solid #c4c4c4;
   font-size: 14px;
 }
-.popup__overlay {
+.form__overlay {
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
   width: 100%;
@@ -114,34 +83,33 @@
   left: 0;
   z-index: -1;
 }
-.popup__input_type_error {
-  border: 1px solid red;
-}
-.popup__input-error {
-  color: red;
-  font-size: 12px;
-  width: 370px;
+.form__update-disabled {
+  border: 1px solid #000000;
+  background-color: #f1f1f1;
+  cursor: default;
+  color: #000000;
+  opacity: 0.2;
 }
 
 @media screen and (max-width: 880px) {
-  .popup {
+  .popup__form {
     position: fixed;
     top: 18%;
     left: 33%;
   }
 
-  .popup__edit-profile {
+  .form__edit-profile {
     width: 282px;
     height: 322px;
   }
 
-  .popup__item {
+  .form__item {
     width: 238px;
     height: 30px;
     border-bottom: 1px solid #c4c4c4;
   }
 
-  .popup__update {
+  .form__update {
     border-radius: 3px;
     width: 238px;
     height: 46px;
@@ -149,7 +117,7 @@
 }
 
 @media screen and (max-width: 550px) {
-  .popup {
+  .popup__plus {
     position: fixed;
     top: 18%;
     left: 24%;
@@ -157,18 +125,18 @@
 }
 
 @media screen and (max-width: 320px) {
-  .popup {
+  .popup__plus {
     position: fixed;
     top: 17%;
     left: 8%;
   }
 
-  .popup__edit-profile {
+  .form__edit-profile {
     width: 264px;
     height: 350px;
   }
 
-  .popup__item {
+  .form__item {
     width: 238px;
     height: 25px;
   }
