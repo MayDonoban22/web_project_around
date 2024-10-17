@@ -43,7 +43,10 @@ api.getCards().then((data) => {
           () => {
             popupDeleteCard.open();
             popupDeleteCard.setAction(() => {
-              api.deleteCard(item._id).then(() => {});
+              api.deleteCard(item._id).then(() => {
+                card.removeCard();
+                popupDeleteCard.close();
+              });
             });
           },
           "8f9763feed63dc78a176f2fe"
@@ -92,31 +95,21 @@ api.getCards().then((data) => {
 const templateSelector = document.querySelector("template");
 const editButton = document.querySelector(".content__edit-button");
 const plusButton = document.querySelector(".content__plus-button");
-
+const avatarButton = document.querySelector(".content__image-overlay");
 const popupProfile = new PopupWithForm("#popup-profile", (inputValues) => {
   api.editUser(inputValues.name, inputValues.about).then((data) => {
     userProfile.setUserInfo(data.name, data.about, data.avatar);
   });
 });
 
-// const popupDeleteCard = new PopupWithForm("#delete-card", (cardId) => {
-//   api.deleteCard(cardId).then(() => {
-//     document.querySelector(`#id-${cardId}`).remove();
-//     popupDeleteCard.close();
-//   });
-// });
-
 const popupDeleteCard = new PopupWithConfirmation("#delete-card");
 popupDeleteCard.setEventListeners();
 
-const popupImageProfile = new PopupWithForm("#edit-avatar", (inputValues) =>
-  api.editAvatar(inputValues.avatar).then((data) => {
-    userProfile.setUserInfo(data.avatar);
-  })
-);
-popupImageProfile.open();
-popupImageProfile.setEventListeners();
-popupImageProfile.setEventListeners();
+const popupImageProfile = new PopupWithForm("#edit-avatar", (inputValues) => {
+  api.editAvatar(inputValues).then((data) => {
+    userProfile.setUserAvatar(data.avatar);
+  });
+});
 
 const popupShowImage = new PopupWithImage("#popup-image");
 
@@ -124,7 +117,9 @@ popupProfile.setEventListeners();
 
 popupShowImage.setEventListeners();
 
+popupImageProfile.setEventListeners();
 editButton.addEventListener("click", () => popupProfile.open());
+avatarButton.addEventListener("click", () => popupImageProfile.open());
 
 const validationProfile = new FormValidator(form, settings);
 validationProfile.enableValidation();
