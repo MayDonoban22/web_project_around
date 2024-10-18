@@ -7,7 +7,7 @@ import {
   profileAbout,
   profileAvatar,
   settings,
-} from "../components/ utils.js";
+} from "../components/utils.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/Section.js";
